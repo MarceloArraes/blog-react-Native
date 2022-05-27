@@ -3,11 +3,12 @@ import React,{useContext} from 'react'
 import BlogContext from '../context/BlogContext'
 
 const IndexScreen = () => {
-const {data, addBlogPost} = useContext(BlogContext)
+const {data, addBlogPost, deleteBlogPost} = useContext(BlogContext)
   return (
     <View>
       <Text>IndexScreen </Text>
       <Button title="add post" onPress={()=>addBlogPost("Marcelo", "Arraes")}/>
+      <Button title="delete post" onPress={()=>deleteBlogPost()}/>
       <FlatList 
       data={data}
       keyExtractor={(blogPost)=> blogPost.title}
