@@ -12,13 +12,10 @@ const {state, addBlogPost, deleteBlogPost} = useContext(Context)
     <View>
       <View style={styles.header}>
       <Text style={{color:'white'}}>IndexScreen </Text>
-      <AntDesign name="plussquareo" size={24} color="white" />
       </View>
-      <Button title="add post" onPress={addBlogPost}/>
-      {/* <Button title="delete post" onPress={()=>deleteBlogPost()}/> */}
       <FlatList 
       data={state}
-      keyExtractor={(blogPost)=> blogPost.title}
+      keyExtractor={(blogPost)=> blogPost.id}
       renderItem={({item})=>{
         return (
               <TouchableOpacity onPress={()=>navigation.navigate('Show',{id: item.id})}>
